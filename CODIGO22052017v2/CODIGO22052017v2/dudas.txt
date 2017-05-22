@@ -1,0 +1,20 @@
+
+------------------DIAGRAMAS------------------------
+--- Eliminar cuenta:
+1.- 1.1.1: readCuenta() cambiar a find(id)
+2.- 1.1.2: drop CUENTA cambiar a removeId(id)
+
+--- Cerrar sesion:
+1.- 1.1.1: setSesionID cambiar a nullSesion()
+
+
+
+
+
+------------------CODIGO----------------------------
+------ DAO Accede a BD
+DIAPOSITIVAS 139, 148, 165
+Seria hacer una copia de el usuario?
+P.E.: 
+	TOUsuarioImp usuario = BD.read(id);
+	return new TOUsuarioImp(usuario.getNombre(), usuario.getCorreo(), usuario.getContrasena());
