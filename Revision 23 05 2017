@@ -1,0 +1,21 @@
+Cosas a revisar:
+
+	- Los DAO y los accesos a memoria. DAOSession no accede a memoria. Deberiamos implementar para todos el patron singleton.
+    Valorar el uso de DAOsession y si queremos guardar las sesiones en la BD. 
+    Revisar el DAOUsuario y las invocacion de los AS. No debe utilizarla.
+
+	- En la AS:Gestion de cuentas, tenemos muchos metodos. Hay que separarlos en varias AS; Gestion de chats, Gestion principal....
+    Hasta el momento con AS:gestion de cuentas, AS:Gestion de chats y AS:Gestion principal de uso seria suficiente. 5 Metodos por clase 
+    seria lo idoneo.
+
+	- En los TOUsuarios, tenemos mucho codigo. Debemos plantear la usabilidad de los Business Objects. 
+
+	- No podemos mostrar nada desde la capa de negocio. De eso se encarga la capa de presentacion.
+
+	- En las pruebas hay que probar explicitamente los metodos, no podemos hacer cosas que estos metodos deben hacer. Le ha gustado
+    la prueba de bloquear usuario. Debemos seguir esa estructura.
+
+	- Nos ha explicado ademas cosas sobre el Maven, e informacion extra...
+
+   
+   
