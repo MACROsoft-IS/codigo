@@ -1,0 +1,107 @@
+
+CAMBIOS Y ESTRUCTURA myUni 29 05 2017
+
+1- APPLICATION SERVICES
+
+  No pueden mostrar nada. 
+  Codigo independiente de todo lo demas. 
+  No inicializan daos, los toman en su constructora.
+
+      - CONOCER GENTE: 
+      
+         Problema: Codigo no independiente, hacemos uso de la interfaz.
+           -> Estructura a seguir y funcionamiento:
+            
+             AS : Posibles metodos:
+                - dame usuario valido. -> da un usuario de la base de datos que sea valido. (que no este en las listas ...etc)
+                
+                - conocer a usuario X -> partiendo de un usuario x ya extraido, se le da la posibilidad al usuario que 
+                                                  le de me gusta o no
+                                                  
+                - incluir usuario en lista X -> dado un usuario tal, se le mete en la lista que le corresponda del usuario que le
+                                                  corresponda
+                                                  
+            INTERFAZ : funcionamiento
+                
+                - Se le va preguntando al usuario X que desea hacer, a medida que responda se va llamando a los metodos necesarios del
+                  AS
+    
+         Problema:  No podemos tomar toda la base de datos de golpe para elegir un usuario entre ellos.
+         
+           -> Alternativas
+               - Desordenamos la base de datos por cada acceso a ella
+              
+               - Generamos un numero aleatorio entre 1 y el tamaño y extraemos un elemento. Si es valido se utiliza,si no sacamos otro
+      
+      
+      - GESTION DE CHATS:
+      
+         Problema: No esta bien diseñado, estamos tomando como que los usuario se encuentran en las misma maquina,no esta bien planteado.
+                   Expectativas no realistas.
+                      
+            -> Vamos a implementar un sistema que haga uso de marcas temporales (time stamp (TS)):
+               
+                - La clase Chats y la Clase Mensajes incluiran un atributo que indique en que momento se realizo la accion.
+                      
+                      AS : Funcionamiento ***********revisar*************
+                     
+                              1- Usuario X crea chat con usuario Y.-> Se estableze un chat con TS XY
+                              
+                              2- EL usuario Y comprobaria que su TS de chats, fuera el ultimo TS.
+        
+                              2- Usuario X manda mensaje a usuario Y.-> Se crea un mensaje con un TS XY
+                              
+                              3- Usuario Y comprueba que su TS de mensajes, es el ultimo TS de mensajes.
+                              
+                              4- Necesitamos bases de datos que almacenen mensajes y chats.
+                              
+                        Metodos a implementar:
+                            
+                              - mensaje nuevo 
+                              
+                              - comprobar mensajes nuevos 
+                                                
+                              - chat nuevo 
+                              
+                              - comprobar chats nuevos 
+                                                
+                       Base de datos:
+                           
+                              - Chat -> Guardara Chat con el atributo TS.
+                              
+                              - Mensaje -> Por Cada chat, tendremos una base de datos de mensajes.....>>> REVISAR
+                         
+
+2- ORGANIZACION DE DAOS y PATRON FACTORIA ABSTRACTA
+
+         Problema: No sabemos como implementar el patron y si la organizacion de los DAOS esta bien
+           
+           -> Solucion
+             Implementar el patron factoria abstracta que organizara e inicializara los DAOS.
+             Al inicio del programa se crean todos los elementos, las factorias,los AS..etc, y que los AS 
+             hagan uso de la factoria que necesiten (Se le pasara por el constructor) 
+             
+  
+ 3- ESTRUCTURA CON LOS BO
+ 
+        Problema: No sabemos como hacerlo
+          -> Solucion
+            En principio,haciendo todo lo anterior (Punto 1 y 2) es suficiente
+         
+ 4- INTERFAZ Y PRUEBAS
+ 
+        Problema: Como hacer la interfaz y las pruebas
+           -> Solucion
+                - Separar la vista en si, de el main o launcher de la aplicacion
+                
+                - Las pruebas de la interfaz se pueden hacer in situ.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
