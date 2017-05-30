@@ -1,0 +1,27 @@
+NUMELO HUNO:
+
+-- Las interfaces de vista:
+  Preguntar como lo prefiere, si las interfaces de vista y as
+como las de conocer gente o la interfaz vista y as de chats.
+  En las primeras la jerarquia de llamada es:
+	VISTA > AS
+  En la de chat es:
+	AS > VISTA (en caso de tener que mostrar algo)
+  ASEGURARSE BIEN CUAL ES LA QUE QUIEREEEEERLRLRLRLRL
+
+-- Bases de datos de Chats y Mensajes:
+  Actualmente CADA usuario tiene una base de datos de chat y CADA
+chat tiene una base de datos de mensajes.
+  Preguntarle si prefiere eso o tener una UNICA base de datos de
+chat y otra UNICA base de datos de mensajes.
+  ASEGURARSEEEEEEEEEEEEEEEEEEEEEE
+
+-- Mensajes que se actualizan:
+  Que metodo hay que usar que ya estan establecidos :(
+  Actualmente tenemos que cada chat tenga una base de datos de
+mensajes, en la que cada mensaje esta identificado por un String
+con el momento exacto en el que se creo. Ademas, cada mensaje
+tiene el correo de quien lo envio, el mensaje que mando, el long
+con el momento de creacion, etc.
+  Hemos intentao hacer un apaño en InterfazChats pero NO SALEEE.
+Se desordena y no funciona ni de coña, algunos mensajes ni los muestra
