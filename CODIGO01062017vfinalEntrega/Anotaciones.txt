@@ -1,0 +1,7 @@
+Aclaraciones:
+
+-- El proyecto tiene un Launcher.java que permite ejecutarlo en modo 
+consola.
+-- No se han realizado pruebas específicas de los metodos de 
+integración puesto que se usan dichos métodos en las pruebas de
+negocio, tanto directa como indirectamente.
